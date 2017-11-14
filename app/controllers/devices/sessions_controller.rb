@@ -9,7 +9,7 @@ module Devices
     private
 
     def authenticate
-      unless entity.present? && entity.authenticate(auth_params[:device_token])
+      unless entity.present? && entity.authenticate(auth_params[:token])
         raise Knock.not_found_exception_class
       end
     end
@@ -27,7 +27,7 @@ module Devices
     end
 
     def auth_params
-      params.require(:auth).permit(:device_id, :device_token)
+      params.require(:auth).permit(:device_id, :token)
     end
   end
 end
