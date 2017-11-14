@@ -13,10 +13,11 @@
 ActiveRecord::Schema.define(version: 20170924151109) do
 
   create_table "devices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "did", null: false
-    t.string "user_agent", null: false
+    t.string "device_id", null: false
+    t.string "token_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["device_id"], name: "index_devices_on_device_id", unique: true
   end
 
   create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
