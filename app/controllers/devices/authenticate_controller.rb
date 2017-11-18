@@ -14,16 +14,16 @@ module Devices
     end
 
     def authenticate_device
-      entity_token = build_entity_token
-      return unless entity_token
-      device_id = entity_token.payload["device_id"]
+      payload = token_payload
+      return unless payload
+      device_id = payload["device_id"]
       return unless device_id
       @current_device = Device.find(device_id)
     end
 
-    def build_entity_token
+    def token_payload
       return unless token
-      Knock::AuthToken.new(token: token)
+      Knock::AuthToken.new(token: token).payload
     rescue JWT::IncorrectAlgorithm, JWT::DecodeError
     end
 
