@@ -4,7 +4,7 @@ module Devices
       device.update(device_attributes)
 
       if device.errors.present?
-        render json: { errors: device.errors }, status: :unprocessable_entity
+        render jsonapi_errors: device.errors, status: :unprocessable_entity
       else
         render json: auth_token, status: :created
       end

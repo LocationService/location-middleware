@@ -1,6 +1,6 @@
 class SerializableDevice < JSONAPI::Serializable::Resource
   type 'devices'
-  attributes :did, :user_agent
+  attributes :device_id
 
   has_many :locations do
     link :related do
