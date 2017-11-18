@@ -21,7 +21,7 @@ module Devices
     end
 
     def registration_params
-      params.require(:registration).permit(:device_id, :token)
+      params.require(:reg).permit(:device_id, :token)
     end
 
     def auth_token

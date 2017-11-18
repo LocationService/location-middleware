@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :devices do
     post "auth/login", to: "sessions#create"
     post "auth", to: "registrations#create"
+    resources :locations, only: :create
   end
 
   namespace :api do

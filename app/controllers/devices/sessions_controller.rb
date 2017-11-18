@@ -1,6 +1,6 @@
 module Devices
   class SessionsController < ApplicationController
-    before_action :authenticate
+    before_action :authenticate!
 
     def create
       render json: auth_token, status: :created
@@ -8,7 +8,7 @@ module Devices
 
     private
 
-    def authenticate
+    def authenticate!
       unless entity.present? && entity.authenticate(auth_params[:token])
         raise Knock.not_found_exception_class
       end
