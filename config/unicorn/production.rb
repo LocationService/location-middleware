@@ -17,6 +17,7 @@ stdout_path "#{app_path}/log/unicorn.stdout.log"
 
 before_exec do |server|
   ENV.update Dotenv::Environment.new('.env')
+  ENV['BUNDLE_GEMFILE'] = "#{app_path}/Gemfile"
 end
 
 before_fork do |server, worker|
