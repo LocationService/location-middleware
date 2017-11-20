@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170924151109) do
 
-  create_table "devices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "devices", force: :cascade do |t|
     t.string "device_id", null: false
     t.string "token_digest", null: false
     t.datetime "created_at", null: false
@@ -20,16 +23,16 @@ ActiveRecord::Schema.define(version: 20170924151109) do
     t.index ["device_id"], name: "index_devices_on_device_id", unique: true
   end
 
-  create_table "locations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "locations", force: :cascade do |t|
     t.bigint "device_id", null: false
-    t.float "lat", limit: 24, null: false
-    t.float "lng", limit: 24, null: false
+    t.float "lat", null: false
+    t.float "lng", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["device_id"], name: "index_locations_on_device_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", null: false

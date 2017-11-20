@@ -8,11 +8,12 @@ end
 ruby "2.4.2"
 
 gem 'rails', '~> 5.1.4'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
 gem 'jsonapi-rails'
+gem 'dotenv-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -32,4 +33,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'capistrano', '~> 3.10'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
