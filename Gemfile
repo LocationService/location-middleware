@@ -25,7 +25,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
-  gem 'pry-state'
+  # gem 'pry-state'
 end
 
 group :development do
