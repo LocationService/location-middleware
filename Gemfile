@@ -37,4 +37,5 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end

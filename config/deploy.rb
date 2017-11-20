@@ -15,3 +15,4 @@ set :rbenv_ruby, "2.4.2"
 append :linked_files, ".env"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets"
 
+after 'deploy:publishing', 'unicorn:restart'
