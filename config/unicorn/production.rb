@@ -15,6 +15,10 @@ listen "#{tmp_path}/sockets/unicorn.sock", backlog: 128
 stderr_path "#{app_path}/log/unicorn.stderr.log"
 stdout_path "#{app_path}/log/unicorn.stdout.log"
 
+before_exec do |server|
+  ENV.update Dotenv::Environment.new('.env')
+end
+
 before_fork do |server, worker|
   ActiveRecord::Base.connection.disconnect!
 
