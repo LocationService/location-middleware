@@ -116,8 +116,6 @@ GEM
     pry-byebug (3.5.0)
       byebug (~> 9.1)
       pry (~> 0.10)
-    pry-state (0.1.9)
-      pry (>= 0.9.10, < 0.11.0)
     puma (3.10.0)
     rack (2.0.3)
     rack-test (0.7.0)
@@ -195,7 +193,6 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
-  pry-state
   puma (~> 3.7)
   rails (~> 5.1.4)
   spring
