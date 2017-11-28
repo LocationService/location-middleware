@@ -17,11 +17,11 @@ module Devices
     end
 
     def device_attributes
-      registration_params.slice(:token)
+      registration_params.except(:device_id)
     end
 
     def registration_params
-      params.require(:reg).permit(:device_id, :token)
+      params.require(:reg).permit(:device_id, :manufacturer, :model, :android_release)
     end
 
     def auth_token

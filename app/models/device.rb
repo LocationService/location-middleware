@@ -5,9 +5,9 @@ class Device < ApplicationRecord
 
   validates :device_id, presence: true, uniqueness: true
 
-  validate do |record|
-    record.errors.add(:token, :blank) unless record.token_digest.present?
-  end
+  # validate do |record|
+  #   record.errors.add(:token, :blank) unless record.token_digest.present?
+  # end
 
   def authenticate(unencrypted_token)
     BCrypt::Password.new(token_digest).is_password?(unencrypted_token) && self
