@@ -5,7 +5,7 @@ module Devices
     private
 
     def extract_signed_body
-      data = params[:signed_body].split(".").first
+      data = params[:signed_body].split(".", 2).last
       params.delete(:signed_body)
 
       parsed_data = JSON.parse(data)

@@ -8,7 +8,7 @@ class DeviceSignCheck
     if req.path =~ /^\/devices/ && req.post?
       signed_body = req.params["signed_body"]
       return bad_request unless signed_body
-      data, sign = signed_body.split(".")
+      sign, data = signed_body.split(".", 2)
       return bad_request unless data && sign
       expect_sign = make_sign(data)
       return bad_request unless sign == expect_sign

@@ -12,7 +12,7 @@ module Devices
     private
 
     def location_params
-      params.require(:location).permit(:lat, :lng, :provider)
+      params.require(:location).permit(:lat, :lng)
     end
   end
 end
