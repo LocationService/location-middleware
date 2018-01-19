@@ -102,13 +102,13 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
+    mysql2 (0.4.10)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -190,7 +190,7 @@ DEPENDENCIES
   jsonapi-rails
   knock
   listen (>= 3.0.5, < 3.2)
-  pg
+  mysql2
   pry
   pry-byebug
   puma (~> 3.7)

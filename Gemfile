@@ -8,7 +8,7 @@ end
 ruby "2.4.2"
 
 gem 'rails', '~> 5.1.4'
-gem 'pg'
+gem 'mysql2'
 gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7'
 gem 'knock'
