@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :devices, only: :index do
         resources :locations, only: :index
       end
+      resource :user, only: :show
     end
   end
 end
