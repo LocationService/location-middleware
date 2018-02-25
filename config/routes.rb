@@ -9,10 +9,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :devices, only: :index do
-        resources :locations, only: :index
-      end
       resource :user, only: :show
+      resources :devices, only: :index
+      resources :locations, only: :index
     end
   end
 end
