@@ -38,4 +38,5 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rack-cors', require: 'rack/cors'
 end
